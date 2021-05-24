@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+<title>MAPAS-IN</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="../layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- Top Background Image Wrapper -->
+<div class="bgded overlay" style="background-image:url('images/stock-desenfoque.png');"> 
+  <!-- ################################################################################################ -->
+  <div class="wrapper row1">
+    <header id="header" class="hoc clear"> 
+      <!-- ################################################################################################ -->
+      <div id="logo" class="fl_left">
+        <h1><a href="../index.html">ESTUDIO DEL DESARROLLO DE VENTAS DURANTE UNA DÉCADA</a></h1>
+      </div>
+      <!-- ################################################################################################ -->
+      <nav id="mainav" class="fl_right">
+        <ul class="clear">
+          <li class="active"><a href="../index.html">Home</a></li>
+          <li><a class="drop" href="#">Mapas</a>
+            <ul>
+              <li><a href="mapa1.html">Beneficio y unidades por región</a></li>
+              <li><a href="mapa2.html">Beneficio por unidad vendida</a></li>
+              <li><a href="mapa3.html">Información de cada región por años</a></li>
+              <li><a href="mapa4.html">Cantidad de productos vendidos anualmente</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <!-- ################################################################################################ -->
+    </header>
+  </div>
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <div id="breadcrumb" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <h6 class="heading">Beneficio y unidades totales por región</h6>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="">Mapa1</a></li>
+
+    </ul>
+    <!-- ################################################################################################ -->
+  </div>
+  <!-- ################################################################################################ -->
+</div>
+<!-- End Top Background Image Wrapper -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row3">
+  <main class="hoc container clear"> 
+    <!-- main body -->
+    <!-- ################################################################################################ -->
+    <div class="content"> 
+      <!-- ################################################################################################ -->
+      <div id="gallery">
+        <div class="group btmspace-50 demo">
+          <div class="one_half first">
+            <figure>
+              <p>Beneficio total</p>
+              <div>
+                <canvas id="myChart" width="400" height="400"></canvas>          
+              </div>
+            </figure>
+          </div>
+          <div class="one_half"><figure>
+            <div>
+              <p>Unidades totales vendidas</p>
+              <canvas id="myChart2" width="400" height="400"></canvas>          
+            </div>
+          </figure></div>
+        </div>
+        
+      </div>
+      <!-- ################################################################################################ -->
+      <!-- ################################################################################################ -->
+    </div>
+    <!-- ################################################################################################ -->
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+<!-- ################################################################################################ -->
+<div class="wrapper row5">
+  <div id="copyright" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <p class="fl_left">Proyecto para la asignatura Inteligencia de Negocio</p>
+    <p class="fl_right">Patricio Guerra - Manuel Molina</a></p>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+<script src="../layout/scripts/jquery.min.js"></script>
+<script src="../layout/scripts/jquery.backtotop.js"></script>
+<script src="../layout/scripts/jquery.mobilemenu.js"></script>
+<script src="../chart.js/dist/chart.js"></script>
+
+<script>
+  var ctx = document.getElementById('myChart').getContext('2d');
+  var myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+          labels: ['Australia', 'Central America and the Caribbean', 'Europe', 'Sub-Saharan Africa', 'Asia', 'Middle East and North Africa'],
+          datasets: [{
+              label: 'Beneficio (€)',
+              data: [4722160.03, 2846907.85, 11082938.63, 12183211.4, 6113845.87, 5761191.86],
+              backgroundColor: [
+                  'rgba(255, 99, 132, 0.2)',
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(255, 206, 86, 0.2)',
+                  'rgba(75, 192, 192, 0.2)',
+                  'rgba(153, 102, 255, 0.2)',
+                  'rgba(255, 159, 64, 0.2)'
+              ],
+              borderColor: [
+                  'rgba(255, 99, 132, 1)',
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(255, 206, 86, 1)',
+                  'rgba(75, 192, 192, 1)',
+                  'rgba(153, 102, 255, 1)',
+                  'rgba(255, 159, 64, 1)'
+              ],
+              borderWidth: 1
+          },
+          ]
+      },
+      options: {
+          scales: {
+              y: {
+                  beginAtZero: true
+              }
+          }
+      }
+  });
+  var ctx = document.getElementById('myChart2').getContext('2d');
+  var myChart2 = new Chart(ctx, {
+      type: 'bar',
+      data: {
+          labels: ['Australia', 'Central America and the Caribbean', 'Europe', 'Sub-Saharan Africa', 'Asia', 'Middle East and North Africa'],
+          datasets: [{
+            label: 'Unidades vendidas',
+            data: [2373,1718,7067,9512,3768,2553,869],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+          },
+          ]
+      },
+      options: {
+          scales: {
+              y: {
+                  beginAtZero: true
+              }
+          }
+      }
+  });
+  </script>
+  
+</body>
+</html>

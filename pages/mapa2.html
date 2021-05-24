@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+<title>MAPAS-IN</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="../layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- Top Background Image Wrapper -->
+<div class="bgded overlay" style="background-image:url('images/stock-desenfoque.png');"> 
+  <!-- ################################################################################################ -->
+  <div class="wrapper row1">
+    <header id="header" class="hoc clear"> 
+      <!-- ################################################################################################ -->
+      <div id="logo" class="fl_left">
+        <h1><a href="../index.html">ESTUDIO DEL DESARROLLO DE VENTAS DURANTE UNA DÉCADA</a></h1>
+      </div>
+      <!-- ################################################################################################ -->
+      <nav id="mainav" class="fl_right">
+        <ul class="clear">
+          <li class="active"><a href="../index.html">Home</a></li>
+          <li><a class="drop" href="#">Mapas</a>
+            <ul>
+              <li><a href="mapa1.html">Beneficio y unidades por región</a></li>
+              <li><a href="mapa2.html">Beneficio por unidad vendida</a></li>
+              <li><a href="mapa3.html">Información de cada región por años</a></li>
+              <li><a href="mapa4.html">Cantidad de productos vendidos anualmente</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <!-- ################################################################################################ -->
+    </header>
+  </div>
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <div id="breadcrumb" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <h6 class="heading">Beneficio por cada unidad vendida</h6>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="">mapa2</a></li>
+
+    </ul>
+    <!-- ################################################################################################ -->
+  </div>
+  <!-- ################################################################################################ -->
+</div>
+<!-- End Top Background Image Wrapper -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row3">
+  <main class="hoc container clear"> 
+    <!-- main body -->
+    <!-- ################################################################################################ -->
+    <div class="content"> 
+      <!-- ################################################################################################ -->
+      <div id="gallery">
+        <figure>
+          <div>
+            <canvas id="myChart" width="400" height="100"  style="max-height: 500px !important"></canvas>          
+          </div>
+        </figure>
+      </div>
+      <!-- ################################################################################################ -->
+      <!-- ################################################################################################ -->
+    </div>
+    <!-- ################################################################################################ -->
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+<!-- ################################################################################################ -->
+<div class="wrapper row5">
+  <div id="copyright" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <p class="fl_left">Proyecto para la asignatura Inteligencia de Negocio</p>
+    <p class="fl_right">Patricio Guerra - Manuel Molina</a></p>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+<script src="../layout/scripts/jquery.min.js"></script>
+<script src="../layout/scripts/jquery.backtotop.js"></script>
+<script src="../layout/scripts/jquery.mobilemenu.js"></script>
+<script src="../chart.js/dist/chart.js"></script>
+
+<script>
+  var ctx = document.getElementById('myChart').getContext('2d');
+  var myChart = new Chart(ctx, {
+      type: 'pie',
+      data: {
+          labels: ['Baby food', 'Cereal', 'Office supplies', 'Fruits', 'Household', 'Vegetables', 'Personal Care', 'Clothes', 'Cosmetics', 'Beverages', 'Meat', 'Snacks'],
+          datasets: [{
+              data: [2386.5, 1415.79, 859.67, 1536.14, 1232.47, 1297.79, 1440.69, 3460.56, 2537.11, 2045.01, 667.84, 1457.19],
+              backgroundColor: [
+                  'rgba(255, 99, 132, 0.2)',
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(255, 206, 86, 0.2)',
+                  'rgba(75, 192, 192, 0.2)',
+                  'rgba(153, 102, 255, 0.2)',
+                  'rgba(255, 159, 64, 0.2)',
+                  'rgba(255, 190, 51, 0.2)',
+                  'rgba(255, 239, 51, 0.2)',
+                  'rgba(188, 255, 51, 0.2)',
+                  'rgba(55, 255, 198, 0.2)',
+                  'rgba(219, 51, 255, 0.2)',
+                  'rgba(255, 51, 208, 0.2)',
+
+              ],
+              borderColor: [
+                  'rgba(255, 99, 132, 1)',
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(255, 206, 86, 1)',
+                  'rgba(75, 192, 192, 1)',
+                  'rgba(153, 102, 255, 1)',
+                  'rgba(255, 159, 64, 1)',
+                  'rgba(255, 190, 51, 1)',
+                  'rgba(255, 239, 51, 1)',
+                  'rgba(188, 255, 51, 1)',
+                  'rgba(55, 255, 198, 1)',
+                  'rgba(219, 51, 255, 1)',
+                  'rgba(255, 51, 208, 1)',
+
+              ],
+              borderWidth: 1
+          }]
+      },
+      options: {
+          
+      }
+  });
+  </script>
+
+</body>
+</html>

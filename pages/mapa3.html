@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+<title>MAPAS-IN</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="../layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- Top Background Image Wrapper -->
+<div class="bgded overlay" style="background-image:url('images/stock-desenfoque.png');"> 
+  <!-- ################################################################################################ -->
+  <div class="wrapper row1">
+    <header id="header" class="hoc clear"> 
+      <!-- ################################################################################################ -->
+      <div id="logo" class="fl_left">
+        <h1><a href="../index.html">ESTUDIO DEL DESARROLLO DE VENTAS DURANTE UNA DÉCADA</a></h1>
+      </div>
+      <!-- ################################################################################################ -->
+      <nav id="mainav" class="fl_right">
+        <ul class="clear">
+          <li class="active"><a href="../index.html">Home</a></li>
+          <li><a class="drop" href="#">Mapas</a>
+            <ul>
+              <li><a href="mapa1.html">Beneficio y unidades por región</a></li>
+              <li><a href="mapa2.html">Beneficio por unidad vendida</a></li>
+              <li><a href="mapa3.html">Información de cada región por años</a></li>
+              <li><a href="mapa4.html">Cantidad de productos vendidos anualmente</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <!-- ################################################################################################ -->
+    </header>
+  </div>
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <div id="breadcrumb" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <h6 class="heading">Beneficio y unidades vendidas en cada lugar, clasificadas por año</h6>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="">mapa3</a></li>
+
+    </ul>
+    <!-- ################################################################################################ -->
+  </div>
+  <!-- ################################################################################################ -->
+</div>
+<!-- End Top Background Image Wrapper -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row3">
+  <main class="hoc container clear"> 
+    <!-- main body -->
+    <!-- ################################################################################################ -->
+    <div class="content"> 
+      <!-- ################################################################################################ -->
+      <div id="gallery">
+        <div class="group btmspace-50 demo">
+          <div class="one_half first">
+            <figure>
+              <div>
+                <p>Beneficio por años (€)</p>
+                <canvas id="Beneficio" width="100" height="100"></canvas>          
+              </div>
+            </figure>
+          </div>
+          <div class="one_half"><figure>
+            <div>
+              <p>Unidades vendidas por años</p>
+              <canvas id="Unidades" width="100" height="100"></canvas>          
+            </div>
+          </figure></div>
+        </div>
+        
+      </div>
+      <!-- ################################################################################################ -->
+      <!-- ################################################################################################ -->
+    </div>
+    <!-- ################################################################################################ -->
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+<!-- ################################################################################################ -->
+<div class="wrapper row5">
+  <div id="copyright" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <p class="fl_left">Proyecto para la asignatura Inteligencia de Negocio</p>
+    <p class="fl_right">Patricio Guerra - Manuel Molina</a></p>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+<script src="../layout/scripts/jquery.min.js"></script>
+<script src="../layout/scripts/jquery.backtotop.js"></script>
+<script src="../layout/scripts/jquery.mobilemenu.js"></script>
+<script src="../chart.js/dist/chart.js"></script>
+
+<script>
+  var ctx = document.getElementById('Beneficio').getContext('2d');
+  var myChart = new Chart(ctx, {
+      type: 'radar',
+      data: {
+          labels: ['2010','2011','2012','2013', '2014', '2015','2016', '2017','2018','2019', '2020'],
+          datasets: [{
+            label: 'Australia',
+            data: [1065360.8,0,0,
+            1738959.36,
+            312186.73,
+            369155,0,
+            951410.5,0,0,
+            285087.64
+            ],
+            fill: true,
+            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+            borderColor: 'rgb(255, 99, 132)',
+            pointBackgroundColor: 'rgb(255, 99, 132)',
+            pointBorderColor: '#fff',
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderColor: 'rgb(255, 99, 132)'
+          }, {
+            label: 'Europe',
+            data: [2595022.19,
+            825738.04,
+            2814717.4,
+            455335,
+            1370315.32,
+            617037.67,
+            1741735.09,
+            315574.05,
+            347463.87,0,0
+            ],
+            fill: true,
+            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+            borderColor: 'rgb(54, 162, 235)',
+            pointBackgroundColor: 'rgb(54, 162, 235)',
+            pointBorderColor: '#fff',
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderColor: 'rgb(54, 162, 235)'
+          }
+          , {
+            label: 'Asia',
+            data: [0,250704.63,
+            846885,
+            632512.5,
+            1802771.7,
+            122819.06,
+            606834.72,0,
+            634745.9,
+            1216572.36
+            ],
+            fill: true,
+            backgroundColor: 'rgba(255, 51, 198, 0.2)',
+            borderColor: 'rgb(255, 51, 198)',
+            pointBackgroundColor: 'rgb(255, 51, 198)',
+            pointBorderColor: '#fff',
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderColor: 'rgb(255, 51, 198)'
+          }
+          , {
+            label: 'Sub-Saharan Africa',
+            data: [14031,
+            1651721,
+            3020115,
+            873224,
+            1787357,
+            539196,
+            298656,
+            1115063,
+            736188,
+            1434220,
+            713437,
+            ],
+            fill: true,
+            backgroundColor: 'rgba(51, 255, 173, 0.2)',
+            borderColor: 'rgb(51, 255, 173)',
+            pointBackgroundColor: 'rgb(51, 255, 173)',
+            pointBorderColor: '#fff',
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderColor: 'rgb(51, 255, 173)'
+          }
+          , {
+            label: 'North America',
+            data: [0,
+            0,
+            160935,
+            0,
+            1152486,
+            144521,
+            0,
+            0,
+            0,
+            0,
+            0,
+            ],
+            fill: true,
+            backgroundColor: 'rgba(51, 255, 250, 0.2)',
+            borderColor: 'rgb(51, 255, 250)',
+            pointBackgroundColor: 'rgb(51, 255, 250)',
+            pointBorderColor: '#fff',
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderColor: 'rgb(51, 255, 250)'
+          }
+          , {
+            label: 'Middle East and North Africa',
+            data: [1706934,
+            0,
+            835410,
+            2079863,
+            0,
+            1621,
+            1128242,
+            0,
+            0,
+            0,
+            9119,
+            ],
+            fill: true,
+            backgroundColor: 'rgba(182, 255, 51, 0.2)',
+            borderColor: 'rgb(182, 255, 51)',
+            pointBackgroundColor: 'rgb(182, 255, 51)',
+            pointBorderColor: '#fff',
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderColor: 'rgb(182, 255, 51)'
+          }
+        
+        ]
+      },
+      options: {
+          elements: {
+          line: {
+            borderWidth: 3
+          }
+        }
+      }
+  });
+
+  //unidades
+  var ctx = document.getElementById('Unidades').getContext('2d');
+  var myChart2 = new Chart(ctx, {
+      type: 'radar',
+      data: {
+          labels: ['2010','2011','2012','2013', '2014', '2015','2016', '2017','2018','2019', '2020'],
+          datasets: [{
+            label: 'Australia',
+            data: [15813,0,0,
+            10336,
+            26353,
+            2924,
+            9925,0,0,
+            2974
+            ],
+            fill: true,
+            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+            borderColor: 'rgb(255, 99, 132)',
+            pointBackgroundColor: 'rgb(255, 99, 132)',
+            pointBorderColor: '#fff',
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderColor: 'rgb(255, 99, 132)'
+          }, {
+            label: 'Europe',
+            data: [18739,
+            8614,
+            17614,
+            4750,
+            20416,
+            4120,
+            18597,
+            1815,
+            3452,0,0
+            ],
+            fill: true,
+            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+            borderColor: 'rgb(54, 162, 235)',
+            pointBackgroundColor: 'rgb(54, 162, 235)',
+            pointBorderColor: '#fff',
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderColor: 'rgb(54, 162, 235)'
+          }
+          , {
+            label: 'Asia',
+            data: [0,9999,
+                  6708,
+                  5010,
+                  14180,
+                  4901,
+                  8263,0,
+                  3830,
+                  7076,
+            ],
+            fill: true,
+            backgroundColor: 'rgba(255, 51, 198, 0.2)',
+            borderColor: 'rgb(255, 51, 198)',
+            pointBackgroundColor: 'rgb(255, 51, 198)',
+            pointBorderColor: '#fff',
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderColor: 'rgb(255, 51, 198)'
+          }
+          , {
+            label: 'Sub-Saharan Africa',
+            data: [5822,
+            28518,
+            37797,
+            23845,
+            12774,
+            7342,
+            3395,
+            16438,
+            12663,
+            21987,
+            12289
+            ],
+            fill: true,
+            backgroundColor: 'rgba(51, 255, 173, 0.2)',
+            borderColor: 'rgb(51, 255, 173)',
+            pointBackgroundColor: 'rgb(51, 255, 173)',
+            pointBorderColor: '#fff',
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderColor: 'rgb(51, 255, 173)'
+          }
+          , {
+            label: 'North America',
+            data: [0,
+            0,
+            6422,
+            0,
+            6954,
+            5767,
+            0,
+            0,
+            0,
+            0,
+            0,
+            ],
+            fill: true,
+            backgroundColor: 'rgba(51, 255, 250, 0.2)',
+            borderColor: 'rgb(51, 255, 250)',
+            pointBackgroundColor: 'rgb(51, 255, 250)',
+            pointBorderColor: '#fff',
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderColor: 'rgb(51, 255, 250)'
+          }
+          , {
+            label: 'Middle East and North Africa',
+            data: [13350,
+            0,
+            10427,
+            13955,
+            0,
+            673,
+            6489,
+            0,
+            0,
+            0,
+            3784,
+            ],
+            fill: true,
+            backgroundColor: 'rgba(182, 255, 51, 0.2)',
+            borderColor: 'rgb(182, 255, 51)',
+            pointBackgroundColor: 'rgb(182, 255, 51)',
+            pointBorderColor: '#fff',
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderColor: 'rgb(182, 255, 51)'
+          }
+        
+        ]
+      },
+      options: {
+          elements: {
+          line: {
+            borderWidth: 3
+          }
+        }
+      }
+  });
+  </script>
+
+</body>
+</html>
